@@ -1,3 +1,5 @@
+package base;
+
 public class TestLab2 {
 
 		public static void main(String args[]){

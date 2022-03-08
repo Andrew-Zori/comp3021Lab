@@ -1,4 +1,4 @@
-import java.io.File;
+package base;
 
 public class ImageNote extends Note {
 	// private File image;
