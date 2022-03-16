@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.io.Serializable;
 
-public class Folder implements Comparable<Folder>, Serializable{
+public class Folder implements Comparable<Folder>, Serializable {
 	private ArrayList<Note> notes;
 	private String name;
 
@@ -74,13 +74,13 @@ public class Folder implements Comparable<Folder>, Serializable{
 			for (int i = 0; i < keywordsList.length; i++) {
 				if ((keywordsList.length > i + 2)) {
 					if ((keywordsList[i + 1].toLowerCase().equals("or"))) {
-						if (n.getTitle().contains(keywordsList[i]) || n.getTitle().contains(keywordsList[i + 2])) {
+						if (n.getTitle().toLowerCase().contains(keywordsList[i].toLowerCase()) || n.getTitle().toLowerCase().contains(keywordsList[i + 2].toLowerCase())) {
 							i += 2;
 							continue;
 						}
 
 						if (n instanceof TextNote) {
-							if ((((TextNote) n).getContent().contains(keywordsList[i])) || (((TextNote) n).getContent().contains(keywordsList[i+2]))) {
+							if ((((TextNote) n).getContent().toLowerCase().contains(keywordsList[i].toLowerCase())) || (((TextNote) n).getContent().toLowerCase().contains(keywordsList[i+2].toLowerCase()))) {
 								i += 2;
 								continue;
 							}
@@ -88,12 +88,12 @@ public class Folder implements Comparable<Folder>, Serializable{
 					}
 				}
 				else{
-					if (n.getTitle().contains(keywordsList[i])){
+					if (n.getTitle().toLowerCase().contains(keywordsList[i].toLowerCase())){
 						continue;
 					}
 
 					if (n instanceof TextNote){
-						if (((TextNote) n).getContent().contains(keywordsList[i])){
+						if (((TextNote) n).getContent().toLowerCase().contains(keywordsList[i].toLowerCase())){
 							continue;
 						}
 					}
