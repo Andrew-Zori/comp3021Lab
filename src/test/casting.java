@@ -5,5 +5,9 @@ public class casting {
         Sup b = a;
         b.shout();
         System.out.println(b instanceof Sub);
+
+        Integer small = 10;
+        Integer large = 20;
+        System.out.println(small.compareTo(large));
     }
 }
